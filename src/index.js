@@ -1,12 +1,11 @@
 const express= require("express");
-
+const v1Router= require("./v1/routes/");
 const app= express();
 const PORT= process.env.PORT || 3000;
 
-app.get("/",(req,res)=>{
-    res.send("<h1>Hello world<h1>");
-});
+//rutas
+app.use("/api/v1", v1Router);
 
 app.listen(PORT,()=>{
-    console.log("Server Listening in port ",PORT);
+    console.log(`Server Listening in port ${PORT}`);
 });
