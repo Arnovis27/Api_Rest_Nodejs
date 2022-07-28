@@ -3,6 +3,9 @@ const v1WorkOutRouter= require("./v1/routes/workoutRoutes");
 const app= express();
 const PORT= process.env.PORT || 3000;
 
+//middleware
+app.use(express.json());
+
 //rutas
 app.use("/api/v1/workouts", v1WorkOutRouter);
 
